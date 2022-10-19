@@ -169,7 +169,7 @@ a {
     width: 100%;
 }
 
-.productcar {
+.productcar, .productcar-final {
     display: flex;
     flex-direction: row;
     margin: 10px 0px 0px 0px;
@@ -321,6 +321,32 @@ button a {
     margin: auto;
 }
 
+@media (max-width: 576px) {
+    .main {
+        background-color: rgb(221, 221, 221);
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .total {
+        margin-bottom: 0px;
+        border: 0px;
+    }
+}
+
+@media (min-width: 576px) {
+    .main {
+        background-color: rgb(221, 221, 221);
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .total {
+        margin-bottom: 0px;
+        border: 0px;
+    }
+}
+
 @media (min-width: 576px) and (min-width: 768px) {
     .recomendacionproducts {
         grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
@@ -332,8 +358,17 @@ button a {
 }
 
 @media (min-width: 768px) {
+    .main {
+        background-color: transparent;
+        border: 0px;
+        border-radius: 0px;
+    }
+
     .carproducts {
         width: 500px;
+        background-color: rgb(221, 221, 221);
+        border: 2px solid black;
+        border-radius: 10px;
     }
 
     .main {
@@ -351,6 +386,11 @@ button a {
         align-items: center;
         border: 2px solid black;
         border-radius: 10px;
+        background-color: rgb(221, 221, 221);
+    }
+
+    .productcar-final {
+        border-bottom: 0px; 
     }
 }
 
