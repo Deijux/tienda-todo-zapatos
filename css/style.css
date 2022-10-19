@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background: #011627;
+    transition: all 0.6s ease-in-out;
+    padding: 0px 0px 0px 20px;
+}
+
+#active:checked~.wrapper {
+    right: 0;
+}
+
+.menu-btn {
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    top: 0px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 2px solid #fff;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.menu-btn:before {
+    transform: translateY(-8px);
+}
+
+.menu-btn:after {
+    transform: translateY(8px);
+}
+
+.close {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: background 0.6s;
+}
+
+/* closing animation */
+#active:checked+.menu-btn span {
+    transform: scaleX(0);
+}
+
+#active:checked+.menu-btn:before {
+    transform: rotate(45deg);
+    border-color: #fff;
+}
+
+#active:checked+.menu-btn:after {
+    transform: rotate(-45deg);
+    border-color: #fff;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.txtmenu {
+    margin: 15px 0px 30px 0px;
+}
+
+.wrapper input[type='number'] {
+    background: transparent;
+    border: 0px;
+    border-bottom: 3px solid #107E7D;
+    border-radius: 3px;
+    color: #fff;
+    width: 130px;
+    transition: ease .3s;
+}
+
+.wrapper input[type='number']:hover {
+    width: 150px;
+}
+
+.wrapper select {
+    background: #011627;
+    border: 0px;
+    border-bottom: 3px solid #107E7D;
+    border-radius: 3px;
+    color: #fff;
+    width: 130px;
+    transition: ease .3s;
+}
+
+.margin {
+    margin: 5px 0px 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    padding: 7px;
+    background-color: #011627;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    transition: top 0.5s;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.menu {
+    width: 95px;
+    display: flex;
+    align-items: center;
+}
+
+a {
+    display: flex;
+    align-items: center;
+}
+
+.carshop {
+    padding: 2px 0px 0px 0px;
+    width: 25px;
+}
+
+.insta {
+    padding: 2px 0px 0px 0px;
+    margin: 0px 7px 0px 0px;
+    width: 25px;
+}
+
+.promo {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 50px 0px 30px 0px;
+}
+
+.promo img {
+    width: 1290px;
+    height: 400px;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    gap: 20px 30px;
+}
+
+.product {
+    display: grid;
+    border-radius: 11px;
+    background: rgb(8, 76, 97);
+    background: linear-gradient(180deg, rgba(8, 76, 97, 1) 40%, rgba(1, 22, 39, 1) 130%);
+    margin: 0px 0px 10px 0px;
+    transition: ease .3s;
+}
+
+.product:hover {
+    box-shadow: 9px 6px 20px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 9px 6px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 6px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.imgproduct {
+    width: 300px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.description {
+    text-align: center;
+    color: #fff;
+}
+
+.description p,
+.description h3 {
+    margin: 3px 0px 0px 0px;
+}
+
+.description button {
+    padding: 7px 5px;
+    margin: 10px 0px;
+    border: 2px solid #107E7D;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    color: #107E7D;
+    cursor: pointer;
+}
+
+.description button:hover {
+    color: #fff;
+    background-color: #107E7D;
+    transition: 0.3s ease;
+}
+
+.description button:hover>a {
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+.description button a {
+    text-decoration: none;
+    color: #107E7D;
+    transition: .3s;
+}
+
+.inputsprecios {
+    display: flex;
+    justify-content: space-between;
+    width: 330px;
+}
+
+.descuento {
+    text-decoration-line: line-through;
+}
+
+.precios {
+    display: flex;
+    flex-direction: row;
+    width: 160px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+@media (min-width: 576px) and (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    }
+
+    #active:checked~.wrapper {
+        right: 0;
+    }
+}
+
+@media (min-width: 1290px) {
+    main {
+        grid-template-columns: repeat(4, minmax(300px, 300px));
+    }
+
+    #active:checked~.wrapper {
+        right: -70%;
+    }
+}
